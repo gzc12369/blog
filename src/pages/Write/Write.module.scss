@@ -2,8 +2,10 @@
 .container {
 	margin: 0;
 	padding: 20%;
+
 }
 .box {
+	height: 100vh;
 	.title {
 		display: flex;
 		flex-direction: column;
@@ -31,9 +33,10 @@
 	padding-top: 40px;
 	background-color: #efefef;
 
+	color: #000;
 	display: flex;
 	gap: 20px;
-	height: 100vh;
+	margin-bottom: 50px;
 	.content {
 		flex: 5;
 		display: flex;

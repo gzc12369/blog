@@ -40,7 +40,7 @@ const Home = () => {
         const doc = new DOMParser().parseFromString(html, "text/html")
         return doc.body.textContent
     }
-    
+
     return (
         <div className={style.content}>
             <div className={style.title}>
@@ -48,7 +48,7 @@ const Home = () => {
                 <span>远赴人间惊鸿宴，一睹人间盛世颜</span>
             </div>
 
-            {HomeList.map(item => (
+            {HomeList ? HomeList.map(item => (
                 <Link to={`/arts/${item.id}`} state={{ item }} key={item.id}>
                     <div className={style.card}>
                         <div className={style.boxTitle}>{item.title}</div>
@@ -77,7 +77,7 @@ const Home = () => {
                         </div>
                     </div>
                 </Link>
-            ))
+            )) : null
             }
         </div>
     );

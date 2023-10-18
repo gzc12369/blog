@@ -69,6 +69,7 @@ const RightSidebar = () => {
         // 避免重复请求，直接应用第一次保存的数据
         if (value2.length) {
             setValue1(value2)
+            setTitle("最新文章")
             return
         }
         try {
