@@ -49,6 +49,7 @@
 	}
 
 	.card {
+		font-family: "AaBanRuoKaiShu";
 		width: 96%;
 		margin: 20px auto;
 		background-color: #f9f9f9;
@@ -100,12 +101,6 @@
 			top: 9px;
 			width: 27px;
 			height: 27px;
-		}
-		span {
-			display: block;
-			height: 1px;
-			width: 100%;
-			background-color: #e9e9e9;
 		}
 	}
 }

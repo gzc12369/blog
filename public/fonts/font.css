@@ -4,3 +4,10 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: "AaBanRuoKaiShu";
+	src: url("./AaBanRuoKaiShu-2.ttf"); /* 三极行楷简体 */
+	font-weight: normal;
+	font-style: normal;
+}

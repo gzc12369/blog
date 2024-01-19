@@ -1,0 +1,21 @@
+$lineHeight: 50px;
+.box {
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	width: $lineHeight;
+	height: $lineHeight;
+	color: #fff;
+	background-color: #fff;
+	text-align: center;
+	z-index: 100;
+	box-shadow: 0 0 3px 1px #999999;
+	border-radius: 10px;
+	line-height: $lineHeight;
+	user-select: none;
+	cursor: pointer;
+	
+}
+.box:hover {
+	background-color: #008080;
+}

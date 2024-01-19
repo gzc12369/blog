@@ -72,7 +72,7 @@ const Navbar = () => {
                 <div className={style.loginWay} style={{ display: flag ? "block" : "none" }}>
                     <div className={style.item}>
                         <label htmlFor="phone">手机号</label>
-                        <input type="text" placeholder="手机号" id="phone" value={phone} onChange={e => setPhone(e.target.value)} />
+                        <input type="tel" placeholder="手机号" id="phone" value={phone} onChange={e => setPhone(e.target.value)} />
                     </div>
                     <div className={style.item}>
                         <label htmlFor="password">密码</label>

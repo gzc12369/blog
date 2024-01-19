@@ -8,9 +8,11 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import LeftSidebar from "./components/LeftSidebar/LeftSidebar";
 import RightSidebar from "./components/RightSidebar/RightSidebar";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import Home from "./pages/Home/Home";
 import Art from "./pages/Art/Art";
 import Write from "./pages/Write/Write";
+
 
 // 布局组件
 const Layout = () => {
@@ -21,6 +23,7 @@ const Layout = () => {
       <Outlet />
       <RightSidebar />
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 }

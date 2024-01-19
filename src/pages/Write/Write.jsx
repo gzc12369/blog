@@ -4,6 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 import style from "./Write.module.scss"
 import Tooltip from '../../components/Tooltip/Tooltip';
 const Write = () => {
@@ -18,6 +19,28 @@ const Write = () => {
     const [flag, setFlag] = useState(false);
     const [text, setText] = useState(false);
     const navigate = useNavigate()
+
+    const toolbarOptions = [
+        ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+        ['blockquote', 'code-block'],
+        // [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'script': 'sub' }, { 'script': 'super' }],      // superscript/subscript
+        [{ 'indent': '-1' }, { 'indent': '+1' }],          // outdent/indent
+        [{ 'direction': 'rtl' }],                         // text direction
+
+        [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+        [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+        // [{ 'font': [] }],
+        [{ 'align': [] }],
+
+        ['clean']                                         // remove formatting button
+    ];
+    const modules = {
+        toolbar: toolbarOptions
+    }
 
     const upload = async () => {
         try {
@@ -73,7 +96,7 @@ const Write = () => {
 
     return (
         <div className={style.box}>
-            {flag ? <Tooltip text={text} onClick={hideTooltip}></Tooltip> : ""}
+            {flag && <Tooltip text={text} onClick={hideTooltip}></Tooltip>}
             <div className={style.title}>
                 <span>小智同学的写作室</span>
                 <span>我的天空里没有太阳，总是黑夜，但并不暗，因为有东西代替了太阳</span>
@@ -83,7 +106,7 @@ const Write = () => {
                 <div className={style.content}>
                     <input type="text" placeholder="标题" value={title} onChange={e => setTitle(e.target.value)} />
                     <div className={style.editorContainer}>
-                        <ReactQuill className={style.editor} theme="snow" value={value} onChange={setValue} />
+                        <ReactQuill className={style.editor} theme="snow" modules={modules} value={value} onChange={setValue} />
                     </div>
                 </div>
                 {/* 侧边栏 */}
@@ -131,9 +154,10 @@ const Write = () => {
                     </div>
                 </div>
             </div>
-            <div style={{ backgroundColor: "#FFF", height: "400px", borderRadius: "20px", padding: "30px", overflowX: "hidden", overflowY: "scroll", color: "#000", boxShadow: "0 0 8  px 1px #999" }}>
-                <div dangerouslySetInnerHTML={{ __html: value }}></div>
+            <div className="ql-snow" style={{ backgroundColor: "#FFF", borderRadius: "20px", padding: "30px", color: "#000", boxShadow: "0 0 8  px 1px #999", fontFamily: "AaBanRuoKaiShu" }}>
+                <div className="ql-editor" dangerouslySetInnerHTML={{ __html: value }}></div>
             </div>
+            <ScrollToTopButton></ScrollToTopButton>
         </div>
     );
 }

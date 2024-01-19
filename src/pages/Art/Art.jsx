@@ -4,6 +4,7 @@ import style from "./Art.module.scss"
 import { useLocation, useNavigate } from "react-router-dom";
 import delete1 from "../../assets/img/delete.png";
 import edit from "../../assets/img/deit.png";
+import 'react-quill/dist/quill.snow.css';
 import moment from 'moment';
 import axios from 'axios';
 import Tooltip from '../../components/Tooltip/Tooltip';
@@ -69,11 +70,10 @@ const Art = () => {
                 </div>
             </div>
 
-            <div className={style.card} key={state?.id}>
+            <div className={`${style.card} ql-snow`} key={state?.id}>
                 <div className={style.edit} onClick={editArt}><img src={edit} /></div>
                 <div className={style.delete} onClick={deleteArt}><img src={delete1} /></div>
-                <div className={style.desc} dangerouslySetInnerHTML={{ __html: state?.desc }}></div>
-                <span></span>
+                <div className={`${style.desc} ql-editor`} dangerouslySetInnerHTML={{ __html: state?.desc }}></div>
             </div>
         </div>
     );
