@@ -40,11 +40,11 @@
 - jwt
 - multer 图片上传
 
-![1](D:\桌面\1.jpg)
+![1](https://github.com/gzc12369/blog/blob/master/images/1.jpg)
 
-![2](D:\桌面\2.jpg)
+![2](https://github.com/gzc12369/blog/blob/master/images/2.jpg)
 
-![3](D:\桌面\3.jpg)
+![3](https://github.com/gzc12369/blog/blob/master/images/3.jpg)
 
-![4](D:\桌面\4.jpg)
+![4](https://github.com/gzc12369/blog/blob/master/images/4.jpg)
 
